@@ -1,5 +1,7 @@
 package fr.simplon.givemeacar.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,10 +13,13 @@ public class Agence {
     private Long id;
     private String nom;
 
-    @OneToOne
+    //permet de référencer l'adresse de l'autre coté
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name="adresse")
     private Adresse adresse;
 
     @OneToMany(cascade = CascadeType.ALL)
+    @JsonBackReference
     private List<VehiculesStockes> listVehiculesSotckes;
 
     public Long getId() {

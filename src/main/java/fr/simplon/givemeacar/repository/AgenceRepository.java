@@ -12,6 +12,4 @@ public interface AgenceRepository extends JpaRepository<Agence, Long> {
 
    List<Agence> findAll();
 
-
-
 }

@@ -25,7 +25,7 @@ public class AgenceServiceImpl implements AgenceService{
     @Override
     public Agence ajouterAgence(Agence agence) {
         Agence agenceAajouter = agenceRepository.save(agence);
-        // il faut retoruner un type agence
+        // il faut retourner un type agence
         return agenceAajouter;
     }
 

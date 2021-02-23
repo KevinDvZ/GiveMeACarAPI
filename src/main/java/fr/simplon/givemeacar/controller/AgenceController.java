@@ -9,6 +9,7 @@ import java.util.List;
 
 // permet d'autoriser toutes les requetes et d'éviter les erreurs dans Postman
 @CrossOrigin("*")
+
 //très important, sinon rien ne se passe
 @RestController
 public class AgenceController {
@@ -17,7 +18,7 @@ public class AgenceController {
     @Autowired
     AgenceService agenceService;
 
-    // permet de lister les agences avec leur numéro id
+    // permet de lister la totalité des agences, renvoyée en Json
     @GetMapping("/agences")
     public List<Agence> getAllAgences() {
         return agenceService.listAllAgence();
@@ -31,5 +32,7 @@ public class AgenceController {
         final String s = "agence bien enregistré";
         return s;
     }
+
+
 
 }
