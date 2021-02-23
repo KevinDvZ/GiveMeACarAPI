@@ -20,4 +20,9 @@ public class AdresseServiceImpl implements AdresseService{
     public Adresse ajouterAdresse(Adresse adresse) {
        return  adresseRepository.save(adresse);
     }
+
+    @Override
+    public Adresse ajouterAdresses(List<Adresse> adresses) {
+        return (Adresse) adresseRepository.saveAll(adresses);
+    }
 }

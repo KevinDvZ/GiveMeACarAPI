@@ -20,11 +20,18 @@ public class AdresseController {
         return adresseRepository.findAll();
     }
 
-    // ajout d'adresse en liste
+    // ajout une adresse à la fois
     @PostMapping("/adresses/ajouter")
     @ResponseBody
     public Adresse ajouterAdresse(@RequestBody Adresse adresse){
     return adresseRepository.save(adresse);
+    }
+
+    // ajouter plusieurs adresses à la fois
+    @PostMapping("/adresses/ajouter/list")
+    @ResponseBody
+    public List<Adresse> ajouterAdresse(@RequestBody List<Adresse> adresses){
+        return adresseRepository.saveAll(adresses);
     }
 
 

@@ -15,4 +15,6 @@ public interface AdresseService {
 
     // toutes les requetes POST
     Adresse ajouterAdresse(Adresse adresse);
+    Adresse ajouterAdresses(List<Adresse> adresses);
+
 }
