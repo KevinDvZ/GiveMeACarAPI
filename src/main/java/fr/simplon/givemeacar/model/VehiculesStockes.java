@@ -1,5 +1,9 @@
 package fr.simplon.givemeacar.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 
 
@@ -13,6 +17,18 @@ public class VehiculesStockes {
     private Long idVehiculeStockes;
 
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name="idVehicule")
+    @JsonIdentityInfo(generator=  ObjectIdGenerators.PropertyGenerator.class, property="id")
+    @JsonIdentityReference(alwaysAsId = true)
     private Vehicule vehicule;
+
+
+    public Long getIdVehiculeStockes() {
+        return idVehiculeStockes;
+    }
+
+    public void setIdVehiculeStockes(Long idVehiculeStockes) {
+        this.idVehiculeStockes = idVehiculeStockes;
+    }
 }
