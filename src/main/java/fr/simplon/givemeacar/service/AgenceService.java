@@ -21,4 +21,8 @@ public interface AgenceService {
     Agence ajouterAgence(Agence agence);
 
     Agence updateAgence(long id, Agence agence);
+
+    // Requete Delete
+
+    Agence deleteAgence (Long id);
 }

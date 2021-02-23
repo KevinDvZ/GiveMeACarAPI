@@ -24,13 +24,14 @@ public class AdresseController {
     @PostMapping("/adresses/ajouter")
     @ResponseBody
     public Adresse ajouterAdresse(@RequestBody Adresse adresse){
-    return adresseRepository.save(adresse);
+
+        return adresseRepository.save(adresse);
     }
 
     // ajouter plusieurs adresses à la fois
     @PostMapping("/adresses/ajouter/list")
     @ResponseBody
-    public List<Adresse> ajouterAdresse(@RequestBody List<Adresse> adresses){
+    public List<Adresse> ajouterAdresses(@RequestBody List<Adresse> adresses){
         return adresseRepository.saveAll(adresses);
     }
 

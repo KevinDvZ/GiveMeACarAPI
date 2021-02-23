@@ -31,7 +31,7 @@ public class AgenceController {
     //permet d'ajouter une agence
     @PostMapping("/agences/ajouter")
     @ResponseBody // récupération du body du json
-    public String ajouterAgence(@RequestBody @Validated Agence agence){
+    public String ajouterAgence(@RequestBody Agence agence){
         agenceService.ajouterAgence(agence);
         final String s = "Agence bien enregistrée";
         return s;
@@ -40,10 +40,14 @@ public class AgenceController {
     //permet de modifier l'agences visées par l'id
     @PutMapping("/agences/{id}")
     @ResponseBody
-    public Agence modifierAgence(@PathVariable(value="id") long id,Agence agence){
+    public Agence modifierAgence(@PathVariable(value="id") long id,@RequestBody Agence agence){
         return agenceService.updateAgence(id, agence);
     }
 
+    @DeleteMapping("/agences/{id}")
+    public Agence deleteAgences(@PathVariable(value="id") long id){
+        return agenceService.deleteAgence(id);
+    }
 
 
 }

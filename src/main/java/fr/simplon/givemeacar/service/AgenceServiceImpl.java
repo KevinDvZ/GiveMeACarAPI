@@ -39,9 +39,19 @@ public class AgenceServiceImpl implements AgenceService{
     public Agence updateAgence(long id, Agence agence) {
         Optional<Agence> optionalAgence = this.getAgence(id);
         if(optionalAgence.isPresent()){
+            agence.setId(id);
             return agenceRepository.save(agence);
         }
     return null;
+    }
+
+    @Override
+    public Agence deleteAgence(Long id) {
+        Optional<Agence> optionalAgence = this.getAgence(id);
+        if(optionalAgence.isPresent()){
+           agenceRepository.delete(optionalAgence.get());
+        }
+        return null;
     }
 
 
