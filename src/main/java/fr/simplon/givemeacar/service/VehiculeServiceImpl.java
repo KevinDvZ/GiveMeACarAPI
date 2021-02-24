@@ -20,6 +20,6 @@ public class VehiculeServiceImpl implements VehiculeService{
 
     @Override
     public Vehicule getVehiculeById(Long id) {
-       return vehiculeRepository.findByIdVehicule();
+       return vehiculeRepository.findByIdVehicule(id);
     }
 }
