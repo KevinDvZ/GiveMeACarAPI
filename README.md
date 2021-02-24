@@ -4,6 +4,10 @@
 
 ## Les différents end-point de l'application :
 
+Requetes de type **GET** :
+
+localhost:8080/{objets} avec comme possibilité agences, adresses, vehicules
+
 Requetes de type **POST** :
 * localhost:8080/agences/ajouter : **permet d'ajouter une agence à la fois**
 * localhost:8080/agences/ajouter/listes : **permet d'ajouter plusieurs agences à la fois**
