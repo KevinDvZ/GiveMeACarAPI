@@ -44,9 +44,12 @@ public class AgenceController {
         return agenceService.updateAgence(id, agence);
     }
 
+    // supprimer agence
     @DeleteMapping("/agences/{id}")
-    public Agence deleteAgences(@PathVariable(value="id") long id){
-        return agenceService.deleteAgence(id);
+    public String deleteAgences(@PathVariable(value="id") long id){
+        agenceService.deleteAgence(id);
+        final String s = "Agence effectivement supprimée";
+        return s;
     }
 
 

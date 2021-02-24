@@ -14,7 +14,7 @@ public class Agence {
     private String nom;
 
     //permet de référencer l'adresse de l'autre coté
-    @OneToOne(fetch= FetchType.LAZY)
+    @OneToOne(cascade=CascadeType.ALL)
     @JoinColumn(name="adresse")
     private Adresse adresse;
 
