@@ -6,8 +6,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public interface VehiculeService {
+public interface VehiculeStockesService {
 
-    List<Vehicule> listAllVehicules();
-    Vehicule getVehiculeById(Long id);
+    List<Vehicule> listVehiculeDansAgence();
 }

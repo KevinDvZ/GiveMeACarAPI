@@ -1,9 +1,6 @@
 package fr.simplon.givemeacar.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Vehicule {
@@ -15,7 +12,9 @@ public class Vehicule {
     private String modele;
     private String immatriculation;
     private Long km;
+
     private String typeEnergie;
+
     private String geolocalisation;
 
     public Long getIdVehicule() {

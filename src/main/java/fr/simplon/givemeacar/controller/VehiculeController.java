@@ -21,6 +21,11 @@ public class VehiculeController {
         return vehiculeService.listAllVehicules();
     }
 
+    @GetMapping("/vehicules/{id}")
+    public Vehicule get1Vehicule(@PathVariable(value = "id") Long id) {
+        return vehiculeService.getVehiculeById(id);
+    }
+
 
 
 }

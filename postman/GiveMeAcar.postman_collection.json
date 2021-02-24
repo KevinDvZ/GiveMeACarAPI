@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "7ae580b2-e039-4cde-889b-1609b4324902",
+		"name": "GiveMeAcar",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ajouter l'agence de Nantes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nom\":\"Agence de Nantes Centre\",\r\n    \"adresse\":{\r\n        \"rue\":\"2 allées des cerisiers\",\r\n        \"ville\":\"Nantes\",\r\n        \"codePostal\":44444\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/agences/ajouter",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agences",
+						"ajouter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ajouter l'agence incomplete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nom\":\"Pontivy\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/agences/ajouter",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agences",
+						"ajouter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modifier Agence 2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nom\":\"Agence de Tombouctou\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/agences/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agences",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Supprimer Agence 3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nom\":\"Agence de Tombouctou\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/agences/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agences",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ajouter liste d'adresses",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"rue\":\"15 rue des Cascades\",\r\n        \"codePostal\":44000,\r\n        \"ville\": \"Nantes\"\r\n\r\n    },\r\n    {\r\n       \"rue\":\"15 rue des Nuages\",\r\n        \"codePostal\":53000,\r\n        \"ville\": \"Brest\"\r\n    },\r\n        {\r\n        \"rue\":\"15 rue des Cascades\",\r\n        \"codePostal\":44000,\r\n        \"ville\": \"Morlaix\"\r\n    },\r\n    {\r\n        \"rue\": \"17 rue des Etoiles\",\r\n        \"codePostal\":68000,\r\n        \"ville\":\"Laval\"\r\n    },\r\n        {\r\n        \"rue\":\"118 rue de Bonaparte\",\r\n        \"codePostal\":55000,\r\n        \"ville\": \"Pontivy\"\r\n\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/adresses/ajouter/list",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"adresses",
+						"ajouter",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lister les adresses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/adresses",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"adresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lister agences",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/agences/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"agences",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lister banque de vehicules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vehicules/",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicules",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
